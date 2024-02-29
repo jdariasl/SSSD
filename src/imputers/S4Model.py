@@ -21,6 +21,7 @@ from pytorch_lightning.utilities import rank_zero_only
 from einops import rearrange, repeat
 import opt_einsum as oe
 
+
 contract = oe.contract
 contract_expression = oe.contract_expression
 
@@ -51,7 +52,7 @@ log = get_logger(__name__)
 """ Cauchy kernel """
 
 try: # Try CUDA extension
-    from extensions.cauchy.cauchy import cauchy_mult
+    from entensions.cauchy.cauchy import cauchy_mult
     has_cauchy_extension = True
 except:
     log.warn(
